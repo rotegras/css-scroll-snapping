@@ -1,0 +1,28 @@
+{
+  "name": "css-scroll-snapping",
+  "version": "1.0.0",
+  "description": "css scroll snapping prototype",
+  "main": "index.js",
+  "repository": "git@github.com:rotegras/css-scroll-snapping.git",
+  "author": "Javi <rotegras@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "autoprefixer": "^9.8.0",
+    "browser-sync": "^2.26.7",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-watch": "^5.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0"
+  }
+}
