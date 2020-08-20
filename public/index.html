@@ -3,27 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script type="text/css" src="./dist/css/style.css"></script>
+  <link rel="stylesheet" type="text/css" href="dist/css/style.css" />
   <title>Css snapping</title>
 </head>
 <body>
-  <main>
-    <section class="snap">
+  <nav class="menu">
+    <ul>
+      <li>
+        <a class="menu-item anchor p-2" href="#section1">Section 1</a>
+      </li>
+      <li>
+        <a class="menu-item anchor p-2" href="#section2">Section 2</a>
+      </li>
+      <li>
+        <a class="menu-item anchor p-2" href="#section3">Section 3</a>
+      </li>
+      <li>
+        <a class="menu-item anchor p-2" href="#section4">Section 4</a>
+      </li>
+      <li>
+        <a class="menu-item anchor p-2" href="#section5">Section 5</a>
+      </li>
+    </ul>
+  </nav>
+  <main class="main-content snap-container">
+    <section class="snap-item" id="section1">
       <h1>Snap with css</h1>
-      <h2>Section 1</h2>
+      <h2 class="section__title">Section 1</h2>
     </section>
-    <section class="snap">
-      <h2>Section 2</h2>
+    <section class="snap-item" id="section2">
+      <h2 class="section__title">Section 2</h2>
     </section>
-    <section class="snap">
-      <h2>Section 3</h2>
+    <section class="snap-item" id="section3">
+      <h2 class="section__title">Section 3</h2>
     </section>
-    <section class="snap">
-      <h2>Section 4</h2>
+    <section class="snap-item" id="section4">
+      <h2 class="section__title">Section 4</h2>
     </section>
-    <section class="snap">
-      <h2>Section 5</h2>
+    <section class="snap-item" id="section5">
+      <h2 class="section__title">Section 5</h2>
     </section>
   </main>
 </body>
+<footer>
+  <script src="dist/js/index.js"></script>
+</footer>
 </html>

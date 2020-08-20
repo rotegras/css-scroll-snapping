@@ -1,0 +1,30 @@
+{
+  "browserSyncOptions" : {
+    "host": "localhost",
+    "injectChanges": true,
+    "port": "3000",
+    "open": "external",
+    "stream": true,
+    "server": {"baseDir": "./public"}
+  },
+  "browserSyncWatchFiles1": ["./public/dist/css/*.css", "./public/dist/js/*.js"],
+  "browserSyncWatchFiles": [
+    "./src/scss/**/*.scss", 
+    "./src/js/*.js"
+  ],
+  "paths": {
+    "src": {
+      "scss": "src/scss",
+      "js": "src/js",
+      "fonts": "src/fonts",
+      "images": "src/images"
+    },
+    "dest": {
+      "css": "public/dist/css",
+      "js": "public/dist/js",
+      "fonts": "public/dist/fonts",
+      "images": "public/dist/images",
+      "dist": "public/dist"
+    }
+  }    
+}    
