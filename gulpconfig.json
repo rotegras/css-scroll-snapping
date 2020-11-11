@@ -7,7 +7,6 @@
     "stream": true,
     "server": {"baseDir": "./public"}
   },
-  "browserSyncWatchFiles1": ["./public/dist/css/*.css", "./public/dist/js/*.js"],
   "browserSyncWatchFiles": [
     "./src/scss/**/*.scss", 
     "./src/js/*.js"

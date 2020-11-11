@@ -3,7 +3,8 @@ $middle-blue-green: #aee5d8ff;
 $platinum: #e7e5e5ff;
 $languid-lavender: #e5d0e3ff;
 $pink-lavender: #e0b0d5ff;
-$color1: $medium-aquamarine;
+$color11: $medium-aquamarine;
+$color1: yellow;
 $color2: $middle-blue-green;
 $color3: $platinum;
 $color4: $languid-lavender;
@@ -70,10 +71,14 @@ section:last-of-type {
 
 h1 {
   font-size: 2rem;
+  text-transform: uppercase;
+  user-select: none;
 }
 
 h2 {
   font-size: 1rem;
+  user-select: none;
+  text-transform: uppercase;
 }
 
 .section__title {

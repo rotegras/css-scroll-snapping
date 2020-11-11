@@ -31,6 +31,12 @@ function handleIntersect(entries){
     });
     nav[activeIndex].classList.add('active');
 
+    // reset show class on h2
+    if (activeIndex === 0) {
+      elements.forEach(element => {
+        element.querySelector('h2').classList.remove('show');
+      }) 
+    }
     let activeSection = elements[activeIndex];
     activeSection.querySelector('h2').classList.add('show');
   }
@@ -39,7 +45,7 @@ function handleIntersect(entries){
 const observer = new IntersectionObserver(handleIntersect, {
   root: container,
   rootMargin: "0px",
-  threshold: 0.50
+  threshold: 0.750
 });
 
 elements.forEach(el => {

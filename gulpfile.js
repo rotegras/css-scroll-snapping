@@ -15,29 +15,31 @@ const paths = cfg.paths;
 
 
 // browser-sync
-gulp.task('browser-sync', function() {
+gulp.task('browser-sync-init', function() {
   browserSync.init(cfg.browserSyncWatchFiles, cfg.browserSyncOptions);
 });
 
 
 gulp.task('scss', function() {
   return gulp.src(paths.src.scss + '/*.scss')
-  .pipe(
-    plumber({
-      errorHandler: function(err) {
-        console.log(err);
-        this.emit('end');
-      }
-    })
+    .pipe(
+      plumber({
+        errorHandler: function (err) {
+          console.log(err);
+          this.emit('end');
+        }
+      })
     )
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(sass({ errLogToConsole: true }))
     .pipe(postcss([autoprefixer(
-      {overrideBrowserslist: ['last 2 versions']}
+      { overrideBrowserslist: ['last 2 versions'] }
     )]))
     .pipe(sourcemaps.write(undefined, { sourceRoot: null }))
     .pipe(gulp.dest(paths.dest.css))
-    .pipe(browserSync.stream());
+    .pipe(browserSync.reload({
+      stream: true
+    }));
   });
   
   
@@ -81,8 +83,8 @@ gulp.task('scss', function() {
   // copy all assets on init
   gulp.task('init', gulp.series('scss', 'scripts', 'vendorscripts', 'fonts', 'images'));
   
-  gulp.task('w.bs', gulp.parallel('browser-sync', 'watch'));
+  gulp.task('sync', gulp.parallel('browser-sync-init', 'watch'));
   
-  gulp.task('default', gulp.series('init', 'w.bs'));
+  gulp.task('default', gulp.series('init', 'sync'));
   
   
