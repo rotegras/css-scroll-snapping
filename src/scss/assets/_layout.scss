@@ -4,7 +4,7 @@ $platinum: #e7e5e5ff;
 $languid-lavender: #e5d0e3ff;
 $pink-lavender: #e0b0d5ff;
 $color11: $medium-aquamarine;
-$color1: yellow;
+$color1: #fc0;
 $color2: $middle-blue-green;
 $color3: $platinum;
 $color4: $languid-lavender;
@@ -36,6 +36,65 @@ main.snap-container {
   scroll-snap-type: y mandatory;
 }
 
+.snap-container-horizontal {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  align-items: center;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: oldlace;
+  color: white;
+
+  scroll-behavior: smooth;
+  scroll-snap-points-x: repeat(100vw);
+  scroll-snap-type: x mandatory;
+}
+
+.next-frame {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1040;
+  display: flex;
+  align-items: center;
+  width: 20vw;
+  height: 100%;
+  transition: transform .3s ease;
+  transform: translate(100%);
+
+  &.show {
+    transform: translate(0);
+  }
+
+  &__button {
+    margin-right: auto;
+    margin-left: auto;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 4rem;
+
+    &:after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      width: 60px;
+      height: 60px;
+      border: 1px solid #000;
+      border-radius: 50%;
+      content: '';
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
 section.snap-item {
   display: flex;
   overflow: hidden;
@@ -47,6 +106,16 @@ section.snap-item {
 
   scroll-snap-align: center;
   scroll-snap-stop: always;
+}
+
+section.has-horizontal-items {
+  h2 {
+    position: absolute;
+    bottom: 2rem;
+    left: 1rem;
+    color: black;
+    font-size: 2rem;
+  }
 }
 
 section:first-of-type {
@@ -69,27 +138,84 @@ section:last-of-type {
   background-color: $color5;
 }
 
+.snap-item-horizontal {
+  display: flex;
+  align-items: center;
+  flex: 0 0 100%;
+  justify-content: center;
+  margin-left: .5rem;
+  padding: 0;
+  width: 100vw;
+  height: 100%;
+  text-align: center;
+
+  scroll-snap-align: start;
+
+  h3 {
+    padding: 1rem;
+    background: #000;
+    color: #fff;
+    font-size: 4rem;
+  }
+}
+
+.snap-item-horizontal:nth-child(1n) {
+  background-color: darkorchid;
+}
+
+.snap-item-horizontal:nth-child(2n) {
+  // flex: 0 0 60%;
+  background-color: indigo;
+}
+
+.snap-item-horizontal:nth-child(3n) {
+  // flex: 0 0 40%;
+  background-color: navy;
+}
+
+.snap-item-horizontal:nth-child(4n) {
+  // flex: 0 0 50%;
+  background-color: palegreen;
+}
+
+.snap-item-horizontal:nth-child(5n) {
+  // flex: 0 0 80%;
+  background-color: #eee;
+}
+
+.snap-item-horizontal:nth-child(6n) {
+  // flex: 0 0 60%;
+  background-color: orange;
+}
+
+.snap-item-horizontal:nth-child(7n) {
+  // flex: 0 0 80%;
+  background-color: tomato;
+}
+
 h1 {
-  font-size: 2rem;
   text-transform: uppercase;
+  font-size: 2rem;
+
   user-select: none;
 }
 
 h2 {
-  font-size: 1rem;
-  user-select: none;
   text-transform: uppercase;
+  font-size: 1rem;
+
+  user-select: none;
 }
 
 .section__title {
   font-size: 8rem;
   opacity: 0;
-  transition: all .5s cubic-bezier(.99, .01, .01, .99);
-  transform: translateX(200%);
+  transition: all .5s .3s cubic-bezier(.99, .01, .01, .99);
+  transform: translateY(300%);
 
   &.show {
     opacity: 1;
     transition: all .5s cubic-bezier(.99, .01, .01, .99);
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
